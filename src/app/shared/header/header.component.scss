@@ -1,0 +1,58 @@
+header {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    height: 1rem;
+    
+    padding: 2rem 5rem;
+    
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+
+    svg {
+      fill: var(--clr-neutral-100);
+      cursor: pointer;
+    }    
+
+    #logo {
+      height: 6rem;
+      aspect-ratio: 1 / 1;
+      background: var(--clr-neutral-900);
+      cursor: pointer;
+      display: grid;
+      place-content: center;
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    
+    
+    .nav-menu .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      
+      #menu {
+        width: 4rem;
+        aspect-ratio: 1;
+        margin-bottom: 3rem;
+      }
+
+      & > * + * {
+        margin-top: 1rem;
+      }
+      
+      .social-icon svg {
+          width: 2.5rem;
+          aspect-ratio: 1;
+      }
+      
+    }
+  }
+  
+  

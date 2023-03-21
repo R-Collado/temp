@@ -1,0 +1,253 @@
+main {
+    .container {
+        max-width: 100rem;
+        margin: 0 auto;
+        padding: 2em;
+    }
+
+
+    .album {
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(to bottom, rgba(0, 0, 0, .5), var(--clr-neutral-800)),
+                url(https://images.pexels.com/photos/194916/pexels-photo-194916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-size: cover;
+            background-position: center;
+            filter: blur(4px);
+            transform: scale(1.1);
+            z-index: -1;
+        }
+    
+        .album-header {
+            padding-top: 20rem;
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+
+
+            .album-image {
+                display: flex;
+                align-items: baseline;
+                font-style: italic;
+                font-size: 1.8rem;
+
+                p {
+                    writing-mode: vertical-lr;
+                    transform: rotate(-180deg);
+                    margin-right: 1rem;
+                }
+                p span {
+                    color: var(--clr-primary);
+                    font-weight: 600;
+                }
+
+                img {
+                    max-width: 40rem;
+                    aspect-ratio: 1;
+                }
+            }
+
+            .album-info {
+
+                .album-name {
+                    font-family: 'Lato', sans-serif;
+                    font-size: 3rem;
+                    letter-spacing: .32rem;
+                    color: transparent;
+                    -webkit-text-stroke: 1px white;
+                    -webkit-text-fill-color: transparent;
+
+                    margin-bottom: 1rem;
+                }
+
+                .artist-name {
+                    font-size: 2.8rem;
+                    margin-bottom: 5rem;
+                }
+
+                .cta-btns {
+                    display: flex;
+                    gap: 5px;
+
+                    button {
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                        border: none;
+                        padding: 1em 2em;
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        letter-spacing: 1.4px;
+                        color: var(--clr-neutral-100);
+                        cursor: pointer;
+
+                        transition: 
+                            color 250ms ease-in,
+                            background-color 250ms ease-in;
+
+                        svg {
+                            fill: var(--clr-neutral-100);
+
+                            transition: fill 250ms ease-in;
+                        }
+
+                        &:hover {
+                            color: var(--clr-neutral-900);
+                            background: var(--clr-neutral-100);
+
+                            svg {
+                                fill: var(--clr-neutral-900);
+                            }
+                        }
+                    }
+
+                    .btn-listen {
+                        background: var(--clr-primary);
+                        
+                        svg {
+                            height: 2.4rem;
+                            width: 2.4rem;
+                        }
+                    }
+
+                    .btn-share {
+                        background: transparent;
+
+                        svg {
+                            height: 2rem;
+                            width: 2rem;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
+    }
+
+    .stream {
+
+        .stream-apps {
+            margin-block: 3rem;
+            display: flex;
+            gap: 1rem;
+            
+            button {
+                background-color: transparent;
+                border: none;
+                padding: 1rem;
+                cursor: pointer;
+                display: grid;
+                place-content: center;
+                transition: background-color 250ms ease-in;
+
+                &:hover {
+                    background-color: var(--clr-neutral-100);
+
+                    svg {
+                        fill: var(--clr-neutral-900);
+                    }
+                }
+
+                svg {
+                    fill: var(--clr-neutral-100);
+                    transition: fill 250ms ease-in;
+                }
+            }
+        }
+    }
+
+    .tracklist {
+        
+        .tracks {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding-top: 5rem;
+        
+            .track {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: 4rem;
+                }
+
+                svg {
+                    fill: var(--clr-neutral-100);
+                    cursor: pointer;
+                }
+
+                .play-btn {
+                    height: 4rem;
+                    width: 4rem;
+                }
+
+                .share-btn {
+                    height: 2rem;
+                    width: 2rem;
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    margin: 0;
+                    line-height: 1;
+                    
+                    span {
+                        font-size: 1.4rem;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .other-releases {
+
+        .releases {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            margin-top: 3rem;
+
+            .release {
+                cursor: pointer;
+                
+                .release-image {
+                    max-width: 12.5rem;
+                }
+    
+                .release-name {
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 1.25rem;
+                }
+    
+                .release-artist {
+                    font-style: italic;
+                    font-size: 1.25rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}
+
+/* General Styling */
+.secondary-heading {
+    font-size: 3.5rem;
+    letter-spacing: .35rem;
+}
