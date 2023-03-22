@@ -132,6 +132,28 @@ main {
                 }
             }
         }
+
+        @media (max-width: 1000px) {
+
+            .album-header {
+                flex-direction: column;
+                padding-top: 5rem;
+                align-items: start;
+                
+                .album-image {
+                    flex-direction: column-reverse;
+
+                    p {
+                        writing-mode:horizontal-tb;
+                        transform: rotate(0);
+                        margin-top: 3rem;
+                        font-size: 1.5rem;
+                    }
+                }
+
+                
+            }
+        }
     }
 
     .stream {
@@ -242,6 +264,10 @@ main {
                     font-weight: 300;
                 }
             }
+        }
+        
+        @media (max-width: 1000px) {
+            display: none; 
         }
     }
 }
